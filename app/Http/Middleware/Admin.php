@@ -4,12 +4,13 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class Admin
+class Admin extends Authenticate
 {
-    public function handle(Request $request, Closure $next,  ...$guards): Response
+    public function handle($request, Closure $next, ...$guards)
     {
         if( $request->user($guards)->id != 1 ) {
             throw new AuthenticationException(
