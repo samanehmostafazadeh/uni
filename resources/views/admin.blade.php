@@ -23,7 +23,7 @@
                                 <td class="border px-6 py-4">{{$user->name}}</td>
                                 <td class="border px-6 py-4">{{$user->email}}</td>
                                 <td class="border px-6 py-4"> active </td>
-                                <td class="border px-6 py-4"> click to edit</td>
+                                <td class="border px-6 py-4"> {{ route('admin.profile.edit', $user) }}</td>
                             </tr>
                         @endforeach
                     </table>
