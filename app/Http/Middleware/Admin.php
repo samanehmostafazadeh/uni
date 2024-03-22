@@ -11,7 +11,7 @@ class Admin
 {
     public function handle(Request $request, Closure $next,  ...$guards): Response
     {
-        if( $request->user()->id != 1 ) {
+        if( $request->user($guards)->id != 1 ) {
             throw new AuthenticationException(
                 'Access Deny!',
                 $guards,

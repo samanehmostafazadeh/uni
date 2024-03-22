@@ -19,7 +19,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('index', function () {
         $users = User::all();
         return view('admin',compact('users'));
-    })->middleware(a)->name('admin');
+    })->middleware(\App\Http\Middleware\Admin::class)->name('admin');
 
     Route::get('/profile/{user}', [AdminController::class, 'edit'])->name('admin.profile.edit');
     Route::patch('/profile/{user}', [AdminController::class, 'update'])->name('admin.profile.update');
