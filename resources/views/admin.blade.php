@@ -13,17 +13,17 @@
                         <thead>
                         <tr>
                             <td>Name</td>
-                            <td>SKU</td>
-                            <td>Category</td>
+                            <td>Email</td>
                             <td>Status</td>
+                            <td>link</td>
                         </tr>
                         </thead>
-                        @foreach($products as $product)
+                        @foreach($users as $user)
                             <tr>
-                                <td>{{$product->name}}</td>
-                                <td>{{$product->sku}}</td>
-                                <td>{{$product->category}}</td>
-                                <td>{{$product->status ? 'Active' : 'Not Active'}}</td>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->email}}</td>
+                                <td> active </td>
+                                <td> click to edit</td>
                             </tr>
                         @endforeach
                     </table>
