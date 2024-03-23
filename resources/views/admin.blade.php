@@ -14,7 +14,7 @@
                         <tr class="text-center font-bold">
                             <td class="border px-6 py-4">Name</td>
                             <td class="border px-6 py-4">Email</td>
-                            <td class="border px-6 py-4">Status</td>
+                            <td class="border px-6 py-4">Role</td>
                             <td class="border px-6 py-4">link</td>
                         </tr>
                         </thead>
@@ -22,7 +22,7 @@
                             <tr>
                                 <td class="border px-6 py-4">{{$user->name}}</td>
                                 <td class="border px-6 py-4">{{$user->email}}</td>
-                                <td class="border px-6 py-4"> active </td>
+                                <td class="border px-6 py-4"> @if($user->id == 1) Admin @else User @endif </td>
                                 <td class="border px-6 py-4"> <a href="{{ route('admin.profile.edit', $user) }}"> click to edit user</a> </td>
                             </tr>
                         @endforeach
