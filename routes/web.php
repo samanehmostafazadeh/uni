@@ -6,11 +6,13 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = auth()->user();
+    return view('welcome',compact('user'));
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = auth()->user();
+    return view('dashboard',compact('user'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
@@ -18,7 +20,8 @@ Route::get('/dashboard', function () {
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('index', function () {
         $users = User::all();
-        return view('admin',compact('users'));
+        $user = auth()->user();
+        return view('admin',compact('users', 'user'));
     })->middleware(\App\Http\Middleware\Admin::class)->name('admin');
 
     Route::get('/profile/{user}', [AdminController::class, 'edit'])->name('admin.profile.edit');
@@ -27,9 +30,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile/{user}', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile/{user}', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';

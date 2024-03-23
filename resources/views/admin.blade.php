@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout :user="$user->id">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
@@ -18,12 +18,12 @@
                             <td class="border px-6 py-4">link</td>
                         </tr>
                         </thead>
-                        @foreach($users as $user)
+                        @foreach($users as $u)
                             <tr>
-                                <td class="border px-6 py-4">{{$user->name}}</td>
-                                <td class="border px-6 py-4">{{$user->email}}</td>
-                                <td class="border px-6 py-4"> @if($user->id == 1) Admin @else User @endif </td>
-                                <td class="border px-6 py-4"> <a href="{{ route('admin.profile.edit', $user) }}"> click to edit user</a> </td>
+                                <td class="border px-6 py-4">{{$u->name}}</td>
+                                <td class="border px-6 py-4">{{$u->email}}</td>
+                                <td class="border px-6 py-4"> @if($u->id == 1) Admin @else User @endif </td>
+                                <td class="border px-6 py-4"> <a href="{{ route('admin.profile.edit', $u) }}"> click to edit user</a> </td>
                             </tr>
                         @endforeach
                     </table>
