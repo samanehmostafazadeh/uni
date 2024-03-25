@@ -5,7 +5,7 @@
                 @foreach($posts as $post)
                     <div class="...">
                         <img src="{{ $post->img }}" alt="{{ $post->title}}" />
-                        <a href="#"> {{ $post->title }}</a>
+                        <a href="{{ route('post.show', $post) }}"> {{ $post->title }}</a>
                     </div>
                 @endforeach
             </div>
