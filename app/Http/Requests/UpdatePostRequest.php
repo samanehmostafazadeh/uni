@@ -11,7 +11,7 @@ class UpdatePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->id ==1 || $this->post()->isUserAuthorOfThisPost($this->user());
     }
 
     /**
@@ -22,7 +22,8 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => ['required', 'string', 'max:255'],
+            'body' => ['required', 'string', 'max:255'],
         ];
     }
 }

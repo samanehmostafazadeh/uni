@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class PostController extends Controller
 {
@@ -55,7 +56,13 @@ class PostController extends Controller
      */
     public function update(UpdatePostRequest $request, Post $post)
     {
-        //
+        $post->fill($request->validated());
+
+        if ($post->isDirty(['title', 'body'])) {
+            $post->update();
+        }
+        $post = $post->refresh();
+        return Redirect::route('post.edit',$post)->with('status', 'post-updated');
     }
 
     /**
