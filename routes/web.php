@@ -44,10 +44,10 @@ Route::prefix('post')->middleware('auth')->group(function () {
         $posts = Post::all();
         return view('post.index',compact('posts'));
     })->middleware(\App\Http\Middleware\Admin::class)->name('admin');
-    Route::get('/post/{post}', [postController::class, 'show'])->name('post.show');
-    Route::get('/post/{post}/edit', [postController::class, 'edit'])->name('post.edit');
-    Route::patch('/post/{post}', [postController::class, 'update'])->name('post.update');
-    Route::delete('/post/{post}', [postController::class, 'destroy'])->name('post.destroy');
+    Route::get('/{post}', [postController::class, 'show'])->name('post.show');
+    Route::get('/{post}/edit', [postController::class, 'edit'])->name('post.edit');
+    Route::patch('/{post}', [postController::class, 'update'])->name('post.update');
+    Route::delete('/{post}', [postController::class, 'destroy'])->name('post.destroy');
 });
 
 require __DIR__.'/auth.php';

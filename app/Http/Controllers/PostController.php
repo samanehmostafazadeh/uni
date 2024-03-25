@@ -35,9 +35,10 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show( Post $post)
     {
-        //
+        $user = auth()->user();
+        return view('post.show', compact('user', 'post'));
     }
 
     /**
@@ -45,7 +46,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $user = auth()->user();
+        return view('post.edit', compact('user', 'post'));
     }
 
     /**
