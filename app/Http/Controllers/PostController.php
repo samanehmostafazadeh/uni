@@ -22,7 +22,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $user = auth()->user();
+        return view('post.create', compact('user'));
     }
 
     /**
@@ -30,7 +31,14 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+        $post = new Post($request->validated());
+        $post->active = true;
+        $post->user_id = $request->user()->id;
+        if(is_null($post->img)) {
+            $post->img = "https://nodes.alaatv.com/upload/contentset/departmentlesson/riazi7_kh_set_20210221094207.jpg";
+        }
+        $post->save();
+        return Redirect::route('post.edit',$post)->with('status', 'post-updated');
     }
 
     /**
@@ -61,7 +69,6 @@ class PostController extends Controller
         if ($post->isDirty(['title', 'body'])) {
             $post->update();
         }
-        $post = $post->refresh();
         return Redirect::route('post.edit',$post)->with('status', 'post-updated');
     }
 

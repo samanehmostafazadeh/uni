@@ -1,40 +1,40 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('Post Content') }}
+            {{ __('Create New Content:') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __("Update your post's content.") }}
+            {{ __("publish your desired content to be famous! :)") }}
         </p>
     </header>
 
-    <form method="post" action="{{ route('post.update',$post) }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('post.create') }}" class="mt-6 space-y-6">
         @csrf
-        @method('patch')
+        @method('post')
 
         <div>
             <x-input-label for="title" :value="__('Title')" />
-            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full" :value="old('title', $post->title)" required autofocus autocomplete="title" />
+            <x-text-input id="title" name="title" type="text" class="mt-1 block w-full"  required autofocus autocomplete="title" />
             <x-input-error class="mt-2" :messages="$errors->get('title')" />
         </div>
 
         <div>
             <x-input-label for="body" :value="__('Body')" />
-            <x-text-input id="body" name="body" type="text" class="mt-1 block w-full" :value="old('body', $post->body)" required autocomplete="body" />
+            <x-text-input id="body" name="body" type="text" class="mt-1 block w-full"  required autocomplete="body" />
             <x-input-error class="mt-2" :messages="$errors->get('body')" />
         </div>
 
         <div>
             <x-input-label for="img" :value="__('Image')" />
-            <x-text-input id="img" name="img" type="text" class="mt-1 block w-full" :value="old('img', $post->img)" autocomplete="img" />
+            <x-text-input id="img" name="img" type="text" class="mt-1 block w-full"  autocomplete="image" />
             <x-input-error class="mt-2" :messages="$errors->get('img')" />
         </div>
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
-            @if (session('status') === 'post-updated')
+            @if (session('status') === 'post-created')
                 <p
                     x-data="{ show: true }"
                     x-show="show"

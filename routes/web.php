@@ -15,7 +15,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     /** @var User $user */
     $user = auth()->user();
-    $posts = $user->posts;
+    $posts = $user->posts()->orderBy('created_at', 'desc')->get();
     return view('dashboard',compact('user', 'posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -41,9 +41,11 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('post')->middleware('auth')->group(function () {
     Route::get('index', function () {
-        $posts = Post::all();
+        $posts = Post::all()->sortBy('created_at', 'desc');
         return view('post.index',compact('posts'));
-    })->middleware(\App\Http\Middleware\Admin::class)->name('admin');
+    })->name('post.index');
+    Route::get('/create', [postController::class, 'create'])->name('post.form.create');
+    Route::post('/create', [postController::class, 'store'])->name('post.create');
     Route::get('/{post}', [postController::class, 'show'])->name('post.show');
     Route::get('/{post}/edit', [postController::class, 'edit'])->name('post.edit');
     Route::patch('/{post}', [postController::class, 'update'])->name('post.update');
