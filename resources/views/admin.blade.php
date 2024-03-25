@@ -15,6 +15,7 @@
                             <td class="border px-6 py-4">Name</td>
                             <td class="border px-6 py-4">Email</td>
                             <td class="border px-6 py-4">Role</td>
+                            <td class="border px-6 py-4">#Post</td>
                             <td class="border px-6 py-4">link</td>
                         </tr>
                         </thead>
@@ -23,6 +24,7 @@
                                 <td class="border px-6 py-4">{{$u->name}}</td>
                                 <td class="border px-6 py-4">{{$u->email}}</td>
                                 <td class="border px-6 py-4"> @if($u->id == 1) Admin @else User @endif </td>
+                                <td class="border px-6 py-4"> {{ $u->posts()->count() }} </td>
                                 <td class="border px-6 py-4"> <a href="{{ route('admin.profile.edit', $u) }}"> click to edit user</a> </td>
                             </tr>
                         @endforeach

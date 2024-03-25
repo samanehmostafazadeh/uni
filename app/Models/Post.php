@@ -12,12 +12,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Post extends Model
 {
     use HasFactory;
+
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['name'];
+    protected $fillable = ['title', 'body'];
 
     /**
      * Get the user that owns the post.
