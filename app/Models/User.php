@@ -50,10 +50,10 @@ class User extends Authenticatable
     /**
      * Scope a query to only include active users.
      */
-    public function scopeActive(Builder $query): void
-    {
-        $query->where('active', 1);
-    }
+//    public function scopeActive(Builder $query): void
+//    {
+//        $query->where('active', 1);
+//    }
     /**
      * Get the comments for the blog post.
      */
