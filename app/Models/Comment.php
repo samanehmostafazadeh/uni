@@ -12,6 +12,13 @@ class Comment extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['body'];
+
+    /**
      * Get the user that owns the comment.
      */
     public function user(): BelongsTo

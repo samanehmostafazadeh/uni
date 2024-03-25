@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
@@ -71,6 +72,26 @@ class PostController extends Controller
             $post->update();
         }
         return Redirect::route('post.edit',$post)->with('status', 'post-updated');
+    }
+
+    /**
+     * Comment on Post
+     */
+    public function comment(Request $request, Post $post)
+    {
+        $body = $request->body;
+        if( is_null($request->body)) {
+            $body = "this is a test comment! ~~For DEVELOP ~~ <br> In Production we should prevent null body";
+        }
+        $comment = new Comment([
+            'body' => $body
+        ]);
+        $comment->post_id = $post->id;
+        $comment->user_id = $request->user()->id;
+        $comment->save();
+        $post->refresh();
+
+        return Redirect::route('post.show',$post)->with('status', 'comment-posted');
     }
 
     /**

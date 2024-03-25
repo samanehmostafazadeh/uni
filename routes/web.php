@@ -50,6 +50,8 @@ Route::prefix('post')->middleware('auth')->group(function () {
     Route::get('/{post}/edit', [postController::class, 'edit'])->name('post.edit');
     Route::patch('/{post}', [postController::class, 'update'])->name('post.update');
     Route::delete('/{post}', [postController::class, 'destroy'])->name('post.destroy');
+
+    Route::post('/{post}/comment', [postController::class, 'comment'])->name('comment.create');
 });
 
 require __DIR__.'/auth.php';

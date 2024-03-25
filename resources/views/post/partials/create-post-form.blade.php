@@ -21,7 +21,7 @@
 
         <div>
             <x-input-label for="body" :value="__('Body')" />
-            <x-text-input id="body" name="body" type="text" class="mt-1 block w-full"  required autocomplete="body" />
+            <x-text-input id="body" row="5" name="body" type="text" class="mt-1 block w-full"  required autocomplete="body" />
             <x-input-error class="mt-2" :messages="$errors->get('body')" />
         </div>
 
