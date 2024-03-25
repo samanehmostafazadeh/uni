@@ -11,7 +11,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
+    /** @var User $user */
     $user = auth()->user();
+    $posts = $user->posts;
+    dump($posts);
     return view('dashboard',compact('user'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 

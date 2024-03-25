@@ -18,10 +18,10 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->string('title');
             $table->text('body');
-            $table->string('img');
+            $table->string('img')->nullable();
 
             $table->timestamps();
         });

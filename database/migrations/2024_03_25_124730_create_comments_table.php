@@ -23,7 +23,7 @@ return new class extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->text('body');
 
             $table->timestamps();
