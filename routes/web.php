@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +37,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile/{user}', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile/{user}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::prefix('post')->middleware('auth')->group(function () {
+    Route::get('index', function () {
+        $posts = Post::all();
+        return view('post.index',compact('posts'));
+    })->middleware(\App\Http\Middleware\Admin::class)->name('admin');
+    Route::get('/post/{post}', [postController::class, 'edit'])->name('post.edit');
+    Route::patch('/post/{post}', [postController::class, 'update'])->name('post.update');
+    Route::delete('/post/{post}', [postController::class, 'destroy'])->name('post.destroy');
 });
 
 require __DIR__.'/auth.php';
