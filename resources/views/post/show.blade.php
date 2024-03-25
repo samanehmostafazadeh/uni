@@ -22,11 +22,13 @@
 
             @if( $user->id == 1 || $post->isUserAuthorOfThisPost($user) )
                 <div class="flex items-center gap-4">
+                    <a href="{{ route('post.edit', $post) }}">
                     <x-primary-button>
-                        <a href="{{ route('post.edit', $post) }}">
+
                         {{ __('Edit') }}
-                        </a>
+
                     </x-primary-button>
+                    </a>
                 </div>
             @endif
         </div>
