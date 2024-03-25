@@ -44,6 +44,6 @@ class Post extends Model
     }
 
     public function isUserAuthorOfThisPost(User $user) :bool {
-        return $this->author()->is($user);
+        return $this->user()->is($user);
     }
 }
