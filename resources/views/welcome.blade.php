@@ -17,63 +17,66 @@
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 
-        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://th.bing.com/th/id/R.f664b27b5ed6ee6eb95138d0e1c3690a?rik=bOy3Qqx7AylFvA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fFree-Images-Book-Wallpapers-HD.jpg&ehk=CNRZGzePm8out79YAYkXO%2baUSnhV37NayTxJ3saGSJM%3d&risl=&pid=ImgRaw&r=0" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
-
-                        @if (Route::has('login'))
-                            <nav class="-mx-3 flex flex-1 justify-end">
-                                @auth
-                                    <a
-                                        href="{{ url('/dashboard') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                        صفحه اصلی
-                                    </a>
-                                @else
-                                    <a
-                                        href="{{ route('login') }}"
-                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                    >
-                                       ورود
-                                    </a>
-
-                                    @if (Route::has('register'))
-                                        <a
-                                            href="{{ route('register') }}"
-                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                        >
-                                            عضویت
-                                        </a>
-                                    @endif
-                                @endauth
-                            </nav>
-                        @endif
-                    </header>
-
-                    <main class="mt-6">
-
-                    </main>
-                    <footer class="sticky py-16 text-center text-sm text-black dark:text-white/70">
-
-                            <div class="relative h-32 w-32 ...">
-                                <div class="absolute bottom-0 right-0 h-16 w-16 ...">
-
-                                    Student: Samaneh Mostafazadeh
-                                    <br>
-                                    Student Number: 990060001
-                                    <br>
-                                    Dr. Aziz Hanifi
-                                </div>
+    <div class="bg-fixed ..." style="background-image: url(https://th.bing.com/th/id/OIF.S0H07jygfRUStRtCOtLemQ?rs=1&pid=ImgDetMain)"></div>
 
 
-                        </div>
-                    </footer>
-                </div>
-            </div>
+{{--        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">--}}
+{{--            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://th.bing.com/th/id/R.f664b27b5ed6ee6eb95138d0e1c3690a?rik=bOy3Qqx7AylFvA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fFree-Images-Book-Wallpapers-HD.jpg&ehk=CNRZGzePm8out79YAYkXO%2baUSnhV37NayTxJ3saGSJM%3d&risl=&pid=ImgRaw&r=0" />--}}
+{{--            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">--}}
+{{--                <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">--}}
+{{--                    <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">--}}
 
-        </div>
+{{--                        @if (Route::has('login'))--}}
+{{--                            <nav class="-mx-3 flex flex-1 justify-end">--}}
+{{--                                @auth--}}
+{{--                                    <a--}}
+{{--                                        href="{{ url('/dashboard') }}"--}}
+{{--                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"--}}
+{{--                                    >--}}
+{{--                                        صفحه اصلی--}}
+{{--                                    </a>--}}
+{{--                                @else--}}
+{{--                                    <a--}}
+{{--                                        href="{{ route('login') }}"--}}
+{{--                                        class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"--}}
+{{--                                    >--}}
+{{--                                       ورود--}}
+{{--                                    </a>--}}
+
+{{--                                    @if (Route::has('register'))--}}
+{{--                                        <a--}}
+{{--                                            href="{{ route('register') }}"--}}
+{{--                                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"--}}
+{{--                                        >--}}
+{{--                                            عضویت--}}
+{{--                                        </a>--}}
+{{--                                    @endif--}}
+{{--                                @endauth--}}
+{{--                            </nav>--}}
+{{--                        @endif--}}
+{{--                    </header>--}}
+
+{{--                    <main class="mt-6">--}}
+
+{{--                    </main>--}}
+{{--                    <footer class="sticky py-16 text-center text-sm text-black dark:text-white/70">--}}
+
+{{--                            <div class="relative h-32 w-32 ...">--}}
+{{--                                <div class="absolute bottom-0 right-0 h-16 w-16 ...">--}}
+
+{{--                                    Student: Samaneh Mostafazadeh--}}
+{{--                                    <br>--}}
+{{--                                    Student Number: 990060001--}}
+{{--                                    <br>--}}
+{{--                                    Dr. Aziz Hanifi--}}
+{{--                                </div>--}}
+
+
+{{--                        </div>--}}
+{{--                    </footer>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
     </body>
 </html>
