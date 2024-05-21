@@ -16,6 +16,7 @@
         </style>
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+    <div class="h-24 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500"></div>
         <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
             <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://th.bing.com/th/id/R.f664b27b5ed6ee6eb95138d0e1c3690a?rik=bOy3Qqx7AylFvA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fFree-Images-Book-Wallpapers-HD.jpg&ehk=CNRZGzePm8out79YAYkXO%2baUSnhV37NayTxJ3saGSJM%3d&risl=&pid=ImgRaw&r=0" />
             <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
