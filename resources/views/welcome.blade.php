@@ -59,7 +59,6 @@
 
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
 
-                        <div class="container mx-auto">
                             <div class="relative h-32 w-32 ...">
                                 <div class="absolute bottom-0 right-0 h-16 w-16 ...">
 
@@ -69,7 +68,7 @@
                                     <br>
                                     Dr. Aziz Hanifi
                                 </div>
-                            </div>
+
 
                         </div>
                     </footer>
