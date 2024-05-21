@@ -19,6 +19,13 @@ Route::get('/dashboard', function () {
     return view('dashboard',compact('user', 'posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//Route::get('/dashboard', function () {
+//    /** @var User $user */
+//    $user = auth()->user();
+//    $posts = posts()->orderBy('created_at', 'desc')->get();
+//    return view('dashboard',compact('user', 'posts'));
+//})->middleware(['auth', 'verified'])->name('home');
+
 
 
 Route::prefix('admin')->middleware('auth')->group(function () {

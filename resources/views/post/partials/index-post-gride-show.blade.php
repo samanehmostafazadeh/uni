@@ -5,7 +5,7 @@
                 <a href="{{ route('post.form.create') }}">
                 <x-primary-button>
 
-                        {{ __('Publish New Post') }}
+                        {{ __('انتشار پست جدید') }}
 
                 </x-primary-button>
                 </a>
