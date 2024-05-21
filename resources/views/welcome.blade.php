@@ -22,6 +22,9 @@
     Hello world
   </span>
     </div>
+    <button class="... ring-2 ring-blue-500">
+        Create account
+    </button>
 
 {{--        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">--}}
 {{--            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://th.bing.com/th/id/R.f664b27b5ed6ee6eb95138d0e1c3690a?rik=bOy3Qqx7AylFvA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fFree-Images-Book-Wallpapers-HD.jpg&ehk=CNRZGzePm8out79YAYkXO%2baUSnhV37NayTxJ3saGSJM%3d&risl=&pid=ImgRaw&r=0" />--}}
