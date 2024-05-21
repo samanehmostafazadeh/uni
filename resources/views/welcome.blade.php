@@ -17,8 +17,11 @@
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
 
-    <div class="bg-fixed ..." style="background-image: url(https://th.bing.com/th/id/OIF.S0H07jygfRUStRtCOtLemQ?rs=1&pid=ImgDetMain)"></div>
-
+    <div class="text-5xl font-extrabold ...">
+  <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+    Hello world
+  </span>
+    </div>
 
 {{--        <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">--}}
 {{--            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://th.bing.com/th/id/R.f664b27b5ed6ee6eb95138d0e1c3690a?rik=bOy3Qqx7AylFvA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fFree-Images-Book-Wallpapers-HD.jpg&ehk=CNRZGzePm8out79YAYkXO%2baUSnhV37NayTxJ3saGSJM%3d&risl=&pid=ImgRaw&r=0" />--}}
