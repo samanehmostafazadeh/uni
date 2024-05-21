@@ -57,7 +57,7 @@
 
                     </main>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                    <footer class="sticky py-16 text-center text-sm text-black dark:text-white/70">
 
                             <div class="relative h-32 w-32 ...">
                                 <div class="absolute bottom-0 right-0 h-16 w-16 ...">
