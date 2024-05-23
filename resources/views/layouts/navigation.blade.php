@@ -23,6 +23,10 @@
                         {{ __('پنل ادمین') }}
 
                     </x-nav-link>
+                        <x-nav-link :href="route('posts')" :active="request()->routeIs('admin')">
+                        {{ __('لیست ') }}
+
+                    </x-nav-link>
                     @endif
                 </div>
             </div>

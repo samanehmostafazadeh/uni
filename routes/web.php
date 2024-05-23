@@ -12,6 +12,14 @@ Route::get('/', function () {
     return view('welcome',compact('user'));
 });
 
+
+
+Route::get('posts', function () {
+        $user = auth()->user();
+        $posts = Post::all();
+        return view('post.index',compact('posts','user'));
+})->name('posts');
+
 Route::get('/dashboard', function () {
     /** @var User $user */
     $user = auth()->user();
@@ -19,12 +27,7 @@ Route::get('/dashboard', function () {
     return view('dashboard',compact('user', 'posts'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//Route::get('/dashboard', function () {
-//    /** @var User $user */
-//    $user = auth()->user();
-//    $posts = posts()->orderBy('created_at', 'desc')->get();
-//    return view('dashboard',compact('user', 'posts'));
-//})->middleware(['auth', 'verified'])->name('home');
+
 
 
 
