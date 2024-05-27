@@ -24,10 +24,14 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             {{--            <li class="nav justify-content-end"><a href="/" class="nav-link px-2 link-secondary">خانه</a></li>--}}
-            {{--            <li class="nav justify-content-end"><a href="{{route('posts')}}" class="nav-link px-2 link-dark">لیست </a></li>--}}
+            {{--            <li class="nav justify-content-end"><a href="{{route('dashboard')}}" class="nav-link px-2 link-dark">داشبرد من </a></li>--}}
 
             @auth
-                @if(auth()->user()?->id === 1)
+                            <li class="nav justify-content-end"><a href="/" class="nav-link px-2 link-secondary">خانه</a></li>
+                            <li class="nav justify-content-end"><a href="{{route('posts')}}" class="nav-link px-2 link-dark">لیست </a></li>
+                            <li class="nav justify-content-end"><a href="{{route('dashboard')}}" class="nav-link px-2 link-dark">داشبرد من </a></li>
+
+            @if(auth()->user()?->id === 1)
                     <li><a href="/admin/panel" class="nav-link px-2 link-dark">پنل ادمین</a></li>
                 @endif
             @endauth
@@ -69,6 +73,14 @@
 
     </header>
 </div>
+
+
+
+
+
+
+
+
 <div class="container D-flex justify-content-center">
     {{--    <h2 class="D-flex justify-content-center">--}}
     {{--        هر کتاب یک دنیای جدید--}}
