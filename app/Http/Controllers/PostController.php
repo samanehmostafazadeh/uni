@@ -37,7 +37,7 @@ class PostController extends Controller
         $post->active = true;
         $post->user_id = $request->user()->id;
         if(is_null($post->img)) {
-            $post->img = "https://nodes.alaatv.com/upload/contentset/departmentlesson/riazi7_kh_set_20210221094207.jpg";
+            $post->img = "https://th.bing.com/th/id/R.3559875f2f27979aed146ff438ae72f7?rik=sQMSmIfxK05kZA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fe%2f2%2fc%2f165907.jpg&ehk=N7zplciv61IuAEjujEGoXCY%2bRekZ09PLytL%2bnx2hNic%3d&risl=&pid=ImgRaw&r=0";
         }
         $post->save();
         return Redirect::route('post.edit',$post)->with('status', 'post-updated');

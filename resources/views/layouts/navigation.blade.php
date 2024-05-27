@@ -13,26 +13,31 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('خانه') }}
+                        <span class="ml-4">{{ __('خانه') }}</span>
+                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('    ') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('داشبورد من') }}
                     </x-nav-link>
-                    @if(auth()->user()?->id === 1)
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                        {{ __('پنل ادمین') }}
 
-                    </x-nav-link>
-                        <x-nav-link :href="route('posts')" :active="request()->routeIs('admin')">
+                    <x-nav-link :href="route('posts')" :active="request()->routeIs('admin')">
                         {{ __('لیست ') }}
 
                     </x-nav-link>
+                    @if(auth()->user()?->id === 1)
+                        <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                            {{ __('پنل ادمین') }}
+
+                        </x-nav-link>
                     @endif
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+
+            <div class="hidden sm:flex sm:items-center sm:ms-6 ml-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
@@ -56,7 +61,7 @@
                             @csrf
 
                             <x-dropdown-link :href="route('logout')"
-                                    onclick="event.preventDefault();
+                                             onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('خروج') }}
                             </x-dropdown-link>
@@ -102,7 +107,7 @@
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                                           onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('خروج') }}
                     </x-responsive-nav-link>
@@ -111,3 +116,6 @@
         </div>
     </div>
 </nav>
+
+
+
