@@ -18,7 +18,7 @@ Route::get('posts', function () {
     $user = auth()->user();
     $posts = Post::all();
     return view('post.index',compact('posts','user'));
-})->name('posts');
+})->middleware(['auth', 'verified'])->name('posts');
 
 Route::get('/dashboard', function () {
     /** @var User $user */
